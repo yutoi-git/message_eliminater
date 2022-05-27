@@ -41,6 +41,9 @@
 
 ## 画面遷移図
 https://www.figma.com/file/q71pbw6sIEQaNqwjFZdiBu/Message-Elimination?node-id=0%3A1
+<<<<<<< HEAD
 
 ## ER図
 https://app.diagrams.net/#Hyutoi-git%2Fmessage_elimination%2Freadme%2Fer.drawio
+=======
+>>>>>>> e4f419cadcec13848f5cc64fb1bd91ede43d3f78
