@@ -2,5 +2,5 @@
 <p>やりとり一覧</p>
 
 <% @exchanges.each do |exchange| %>
-  <h3><%= exchange.title %></h3>
+  <h3><%= link_to exchange.id, exchange_messages_path(exchange) %></h3>
 <% end %> 

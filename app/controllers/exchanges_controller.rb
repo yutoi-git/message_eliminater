@@ -1,4 +1,6 @@
 class ExchangesController < ApplicationController
+  before_action :set_exchange, only: %i[edit update destroy histories]
+
   def index
     @exchanges = current_user.exchanges
   end
@@ -17,15 +19,28 @@ class ExchangesController < ApplicationController
     end
   end
 
-  def show
+  def edit; end
+
+  def update
+    if @exchange.update(exchange_params)
+      redirect_to(exchanges_url, notice: 'Exchanges was successfully updated')
+    else
+      render :edit
+    end
   end
 
-  def edit
+  def destroy
+    @exchange.destroy!
+    redirect_to(exchanges_path, notice: 'Exchanges was successfully deleted')
   end
 
   private
 
   def exchange_params
     params.require(:exchange).permit(:list_name)
+  end
+
+  def set_exchange
+    @exchange = current_user.exchanges.find(params[:id])
   end
 end 
