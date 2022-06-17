@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   post 'guest_login', to: 'user_sessions#guest_login'
   
   resources :users, only: %i[new create]
-  resources :exchanges
+  resources :exchanges, only: %i[index new create edit update destroy] do
+    resources :messages, only: %i[index new create edit update destroy]
+  end
 end
