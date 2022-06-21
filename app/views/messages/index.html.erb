@@ -1,7 +1,7 @@
-<h1>Messages#index</h1>
-<p>メッセージ一覧</p>
+<h1>メッセージ一覧</h1>
 
-<h3><%= @exchange.id %></h3>
+<h3><%= @exchange.id %>（やりとりのID）</h3>
+<h3><%= link_to @exchange.companion_id, companions_path %>（相手のID）</h3>
 
 <% @messages.each do |message| %>
   <%= message.body %>

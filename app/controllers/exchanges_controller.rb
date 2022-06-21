@@ -1,5 +1,5 @@
 class ExchangesController < ApplicationController
-  before_action :set_exchange, only: %i[edit update destroy histories]
+  before_action :set_exchange, only: %i[edit update destroy]
 
   def index
     @exchanges = current_user.exchanges
@@ -37,7 +37,7 @@ class ExchangesController < ApplicationController
   private
 
   def exchange_params
-    params.require(:exchange).permit(:list_name)
+    params.require(:exchange).permit(:title)
   end
 
   def set_exchange

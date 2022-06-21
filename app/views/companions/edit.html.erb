@@ -1,0 +1,47 @@
+<h1>相手の情報を編集</h1>
+
+<%= form_with model: @companion, url: companion_path, local: true do |f| %>
+  <% if @companion.errors.present? %>
+    <ul>
+      <% @companion.errors.full_companions.each do |companion| %>
+        <li><%= companion %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="form-group">
+    <%= f.label :relationship %><br />
+    <%= f.text_field :relationship %>
+  </div>
+  <div class="form-group">
+    <%= f.label :acquainted %><br />
+    <%= f.text_field :acquainted %>
+  </div>
+  <div class="form-group">
+    <%= f.label :closeness %><br />
+    <%= f.text_field :closeness %>
+  </div>
+  <div class="form-group">
+    <%= f.label :solution %><br />
+    <%= f.text_field :solution %>
+  </div>
+  <div class="form-group">
+    <%= f.label :partner_gender %><br />
+    <%= f.text_field :partner_gender %>
+  </div>
+  <div class="form-group">
+    <%= f.label :partner_age %><br />
+    <%= f.text_field :partner_age %>
+  </div>
+  <div class="form-group">
+    <%= f.label :other %><br />
+    <%= f.text_field :other %>
+  </div>
+  <br />
+  <%= f.submit %>
+<% end %>
+<br />
+<%= link_to "一覧に戻る", companions_path %>

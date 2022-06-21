@@ -1,5 +1,4 @@
-<h1>Exchanges#index</h1>
-<p>やりとり一覧</p>
+<h1>やりとり一覧</h1>
 
 <% @exchanges.each do |exchange| %>
   <h3><%= link_to exchange.id, exchange_messages_path(exchange) %></h3>

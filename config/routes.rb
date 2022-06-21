@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :exchanges, only: %i[index new create edit update destroy] do
     resources :messages, only: %i[index new create edit update destroy]
   end
+  resources :companions, only: %i[index new create edit update destroy]
 end
