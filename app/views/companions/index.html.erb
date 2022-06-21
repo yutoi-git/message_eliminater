@@ -1,0 +1,16 @@
+<h1>相手一覧</h1>
+
+<% @companions.each do |companion| %>
+  <p><%= companion.nickname %></p>
+  <p><%= companion.relationship %></p>
+  <p><%= companion.acquainted %></p>
+  <p><%= companion.closeness %></p>
+  <p><%= companion.solution %></p>
+  <p><%= companion.partner_gender %></p>
+  <p><%= companion.partner_age %></p>
+  <p><%= companion.other %></p>
+  <%= button_to '編集する', edit_companion_path(companion), method: :get %>
+  <%= button_to '削除する', companion_path(companion), confirm: 'Are you sure?', method: :delete %>
+<% end %> 
+
+<%= link_to '相手を登録', new_companion_path %>

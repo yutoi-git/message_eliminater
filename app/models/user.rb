@@ -2,6 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :exchanges, dependent: :destroy
+  has_many :companions, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
 
