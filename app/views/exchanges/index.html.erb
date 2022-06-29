@@ -2,4 +2,10 @@
 
 <% @exchanges.each do |exchange| %>
   <h3><%= link_to exchange.id, exchange_messages_path(exchange) %></h3>
+  <p><%= exchange.title %></p>
+  <p><%= exchange.companion_id %></p>
+  <%= button_to '編集する', edit_exchange_path(exchange), method: :get %>
+  <%= button_to '削除する', exchange_path(exchange), confirm: 'Are you sure?', method: :delete %>
 <% end %> 
+
+<%= link_to 'やりとり追加', new_exchange_path %>

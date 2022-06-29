@@ -1,5 +1,4 @@
-<h1>Messages#edit</h1>
-<p>メッセージ更新</p>
+<h1>メッセージ更新</h1>
 
 <%= form_with model: @message, url: exchange_message_path(@exchange), local: true do |f| %>
   <% if @message.errors.present? %>
@@ -10,23 +9,18 @@
     </ul>
   <% end %>
   <div class="form-group">
-    <%= f.label :body %><br />
-    <%= f.text_field :body %>
-  </div>
+    Body: <%= f.text_field :body %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :sender %><br />
-    <%= f.select :sender, Message.senders.keys.to_a, { include_blank: '' } %>
-  </div>
+    Sender: <%= f.select :sender, Message.senders.keys.to_a, { include_blank: '' } %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :datetime %><br />
-    <%= f.datetime_select :datetime, { include_blank: '' } %>
-  </div>
+    Datetime: <%= f.datetime_select :datetime, { include_blank: '' } %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :read %><br />
-    <%= f.select :read, Message.reads.keys.to_a, { include_blank: '' } %>
-  </div>
-  <br />
+    Read: <%= f.select :read, Message.reads.keys.to_a, { include_blank: '' } %>
+  </div><br/>
   <%= f.submit %>
 <% end %>
-<br />
+<br/>
 <%= link_to "一覧に戻る", exchange_messages_path(@exchange) %>

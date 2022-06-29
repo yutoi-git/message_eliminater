@@ -1,0 +1,20 @@
+<h1>やりとり更新</h1>
+
+<%= form_with model: @exchange, url: exchange_path, local: true do |f| %>
+  <% if @exchange.errors.present? %>
+    <ul>
+      <% @exchange.errors.full_messages.each do |exchange| %>
+        <li><%= exchange %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="form-group">
+    Title: <%= f.text_field :title %>
+  </div><br/>
+  <div class="form-group">
+    Companion_id: <%= f.collection_select :companion_id, Companion.where(user_id: current_user.id), :id, :id, options = { include_blank: '' } %>
+  </div><br/>
+  <%= f.submit %>
+<% end %>
+<br/>
+<%= link_to "一覧に戻る", exchanges_path(@exchange) %>

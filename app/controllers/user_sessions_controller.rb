@@ -27,7 +27,6 @@ class UserSessionsController < ApplicationController
       password_confirmation: 'password',
       role: :guest
     )
-    #@guest_user.update!
     auto_login(@guest_user)
     redirect_back_or_to root_path, success: 'ゲストとしてログインしました'
   end
