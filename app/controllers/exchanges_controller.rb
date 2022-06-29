@@ -1,5 +1,6 @@
 class ExchangesController < ApplicationController
   before_action :set_exchange, only: %i[edit update destroy]
+  before_action :set_companion, only: %i[new edit]
 
   def index
     @exchanges = current_user.exchanges
@@ -37,10 +38,14 @@ class ExchangesController < ApplicationController
   private
 
   def exchange_params
-    params.require(:exchange).permit(:title)
+    params.require(:exchange).permit(:title, :companion_id)
   end
 
   def set_exchange
     @exchange = current_user.exchanges.find(params[:id])
+  end
+
+  def set_companion
+    @companion = Companion.where(user_id: current_user.id)
   end
 end 

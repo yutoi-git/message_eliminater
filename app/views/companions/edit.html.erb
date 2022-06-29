@@ -9,39 +9,30 @@
     </ul>
   <% end %>
   <div class="form-group">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname %>
-  </div>
+    Nickname: <%= f.text_field :nickname %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :relationship %><br />
-    <%= f.text_field :relationship %>
-  </div>
+    Relationship: <%= f.text_field :relationship %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :acquainted %><br />
-    <%= f.text_field :acquainted %>
-  </div>
+    Acquainted: <%= f.text_field :acquainted %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :closeness %><br />
-    <%= f.text_field :closeness %>
-  </div>
+    Closeness: <%= f.text_field :closeness %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :solution %><br />
-    <%= f.text_field :solution %>
-  </div>
+    Solution: <%= f.text_field :solution %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :partner_gender %><br />
-    <%= f.text_field :partner_gender %>
-  </div>
+    Partner_gender: <%= f.text_field :partner_gender %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :partner_age %><br />
-    <%= f.text_field :partner_age %>
-  </div>
+    Partner_age: <%= f.text_field :partner_age %>
+  </div><br/>
   <div class="form-group">
-    <%= f.label :other %><br />
-    <%= f.text_field :other %>
-  </div>
-  <br />
+    Other: <%= f.text_field :other %>
+  </div><br/>
   <%= f.submit %>
 <% end %>
-<br />
+<br/>
 <%= link_to "一覧に戻る", companions_path %>
