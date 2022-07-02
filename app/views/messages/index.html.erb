@@ -1,7 +1,16 @@
 <h1>メッセージ一覧</h1>
 
-<h3><%= @exchange.id %>（やりとりのID）</h3>
-<h3><%= link_to @exchange.companion_id, companions_path %>（相手のID）</h3>
+<% if @exchange.title.present? %>
+  <h3><%= @exchange.title %></h3>
+<% else %>
+  <h3><%= @exchange.id %>（やりとりのID）</h3>
+<% end %>
+
+<% if @exchange.companion.nickname.present? %>
+  <h3><%= link_to @exchange.companion.nickname, companions_path %></h3>
+<% elsif @exchange.companion_id.present? %>
+  <h3><%= link_to @exchange.companion_id, companions_path %>（相手のID）</h3>
+<% end %>
 
 <% @messages.each do |message| %>
   <%= message.body %>

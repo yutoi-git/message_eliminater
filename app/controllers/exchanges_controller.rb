@@ -38,7 +38,7 @@ class ExchangesController < ApplicationController
   private
 
   def exchange_params
-    params.require(:exchange).permit(:title, :companion_id)
+    params.permit(:title, :companion_id)
   end
 
   def set_exchange
