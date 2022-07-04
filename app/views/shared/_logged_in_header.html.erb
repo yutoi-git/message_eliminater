@@ -1,6 +1,20 @@
 <header>
-  <h3>メッセージ画像作成アプリ</h3>
-  <%= button_to "やりとり一覧", exchanges_path, method: :get %>
-  <%= button_to "相手一覧", companions_path, method: :get %>
-  <%= button_to 'ログアウト', logout_path, method: :delete %>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #13BF00;">
+    <div class="container-fluid">
+      <%= link_to 'メッセージ画像作成アプリ', root_path, class: 'navbar-brand' %>
+      <div class="navbar-collapse justify-content-end">
+        <ul class="navbar-nav nav ms-auto">
+          <li class="nav-item  mx-1">
+            <%= button_to 'やりとり一覧', exchanges_path, method: :get, class: 'btn btn-light' %>
+          </li>
+          <li class="nav-item  mx-2">
+            <%= button_to '相手一覧', companions_path, method: :get, class: 'btn btn-light' %>
+          </li>
+          <li class="nav-item  mx-2">
+            <%= button_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-light' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
