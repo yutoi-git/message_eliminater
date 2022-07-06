@@ -12,7 +12,7 @@
       <% end %>
       <div class="mb-3">
         <%= f.label 'メールアドレス' %><br/>
-        <%= f.text_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control' %>
       </div>
       <div class="mb-3">
         <%= f.label 'パスワード' %><br/>
@@ -24,7 +24,7 @@
       </div>
       <br/>
       <div class="text-center">
-        <%= f.submit 'ユーザー登録する', class: 'btn btn-primary' %>
+        <%= f.submit 'ユーザー登録する', class: 'btn btn-primary text-center' %>
       </div>
     <% end %>
   </div>
