@@ -48,6 +48,8 @@ gem 'jquery-rails'
 
 gem 'sorcery'
 
+gem 'rails-i18n'
+
 # Use Sass to process CSS
 gem "sassc-rails"
 

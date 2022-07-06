@@ -1,22 +1,21 @@
 class UserSessionsController < ApplicationController
-  def new
-    @user = User.new
-  end
+
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_back_or_to(root_url, notice: 'Login successful')
+      redirect_back_or_to root_path, success: 'ログインしました'
     else
-      flash[:alert] = 'Login failed'
+      flash.now[:danger] = 'ログインに失敗しました'
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to(root_path, notice: 'Logged out!')
+    redirect_to root_path, success: 'ログアウトしました'
   end
 
   def guest_login
@@ -28,7 +27,7 @@ class UserSessionsController < ApplicationController
       role: :guest
     )
     auto_login(@guest_user)
-    redirect_back_or_to root_path, success: 'ゲストとしてログインしました'
+    redirect_back_or_to root_path, success: 'お試しで使用中です'
   end
 
   private

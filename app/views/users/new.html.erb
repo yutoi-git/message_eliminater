@@ -1,25 +1,31 @@
-<h1>ユーザー登録</h1>
+<div class="container">
+  <div class="wrapper">
+    <h1 class="h3 my-4 text-center">ユーザー登録</h1>
 
-<%= form_with model: @user, local: true do |f| %>
-  <% if @user.errors.present? %>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= form_with model: @user, local: true do |f| %>
+      <% if @user.errors.present? %>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+      <div class="mb-3">
+        <%= f.label 'メールアドレス' %><br/>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= f.label 'パスワード' %><br/>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= f.label 'パスワード（確認）' %><br/>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+      <br/>
+      <div class="text-center">
+        <%= f.submit 'ユーザー登録する', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <br />
-  <%= f.submit %>
-<% end %> 
+</div>
