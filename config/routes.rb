@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :messages, only: %i[index new create edit update destroy]
   end
   resources :companions, only: %i[index new create edit update destroy]
+  resource :profile, only: %i[edit update]
 end

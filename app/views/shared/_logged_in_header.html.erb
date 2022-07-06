@@ -5,6 +5,8 @@
       <div class="navbar-collapse justify-content-end">
         <ul class="navbar-nav nav">
           <li class="nav-item  mx-2">
+            <%= button_to 'プロフィール', edit_profile_path, method: :get, class: 'btn btn-light' %>
+          <li class="nav-item  mx-2">
             <%= button_to 'やりとり一覧', exchanges_path, method: :get, class: 'btn btn-light' %>
           </li>
           <li class="nav-item  mx-2">

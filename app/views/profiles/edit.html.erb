@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <h1 class="h3 my-4 text-center">プロフィール編集</h1>
+
+    <%= form_with model: @user, url: profile_path, local: true do |f| %>
+      <%= f.label 'メールアドレス' %><br/>
+      <%= f.email_field :email, class: 'form-control mb-3' %>
+      <%= f.label '性別' %><br/>
+      <%= f.text_field :myself_gender, class: 'form-control mb-3' %>
+      <%= f.label '年齢' %><br/>
+      <%= f.text_field :myself_age, class: 'form-control mb-3' %>
+      <div class="text-center">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
