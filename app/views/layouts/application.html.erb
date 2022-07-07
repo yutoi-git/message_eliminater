@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <% if logged_in? %>
+    <% if logged_in? && current_user.role == 'general' %>
       <%= render 'shared/logged_in_header' %>
+    <% elsif logged_in? && current_user.role == 'guest' %>
+      <%= render 'shared/guest_header' %>
     <% else %>
       <%= render 'shared/header' %>
     <% end %>
